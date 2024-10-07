@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] string nextLevelName;
     Camera playerCamera;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
@@ -70,7 +72,16 @@ public class Player : MonoBehaviour
         Debug.Log("Fruit" + fruitCounter);
         if (++fruitCounter == 6)
         {
-            FindAnyObjectByType<TMP_Text>().color = Color.white;
+            if (string.IsNullOrEmpty(nextLevelName)) 
+            {
+                FindAnyObjectByType<TMP_Text>().color = Color.white;
+            }
+            else
+            {
+                SceneManager.LoadScene(nextLevelName);
+            }
+
+            
         }
     }
 }
