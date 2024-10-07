@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 
     internal void CollectFruit()
     {
+        Debug.Log("Fruit" + fruitCounter);
         if (++fruitCounter == 6)
         {
             FindAnyObjectByType<TMP_Text>().color = Color.white;
