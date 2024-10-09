@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     private Vector3 originalPosition;
     private int fruitCounter;
+    TMP_Text fruitsInLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -69,8 +70,8 @@ public class Player : MonoBehaviour
 
     internal void CollectFruit()
     {
-        Debug.Log("Fruit" + fruitCounter);
-        if (++fruitCounter == 6)
+        Debug.Log(fruitCounter);
+        if (++fruitCounter == 5)
         {
             if (string.IsNullOrEmpty(nextLevelName)) 
             {
@@ -79,7 +80,7 @@ public class Player : MonoBehaviour
             else
             {
                 SceneManager.LoadScene(nextLevelName);
-                fruitCounter = 0;
+                fruitCounter = 1;
             }
 
             

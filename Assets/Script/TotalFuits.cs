@@ -18,7 +18,7 @@ public class TotalFuits : MonoBehaviour
 
     private void UpdateText()
     {
-        totalText.text = totalText.text = "Totall fruits : " + totalFruitsCollected;
+        totalText.text = totalText.text = "Total fruits : " + totalFruitsCollected;
     }
 
     private void Start()
