@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
             else
             {
                 SceneManager.LoadScene(nextLevelName);
+                fruitCounter = 0;
             }
 
             
