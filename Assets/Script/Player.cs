@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private Vector3 originalPosition;
     private int fruitCounter;
     TMP_Text fruitsInLevel;
+    public TMP_Text vic;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +76,8 @@ public class Player : MonoBehaviour
         {
             if (string.IsNullOrEmpty(nextLevelName)) 
             {
-                FindAnyObjectByType<TMP_Text>().color = Color.green;
+                FindAnyObjectByType<Timer>().StopTimer();
+                vic.color = Color.green;
             }
             else
             {

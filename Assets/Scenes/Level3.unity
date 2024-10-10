@@ -1208,6 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelName: 
+  vic: {fileID: 502604950}
 --- !u!212 &488196317
 SpriteRenderer:
   m_ObjectHideFlags: 0

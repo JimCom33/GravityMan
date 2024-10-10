@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     TMP_Text timerText;
     static float timePassedInSeconds;
+    private bool isTimerRunning = true;
 
     private void Start()
     {
@@ -14,7 +15,14 @@ public class Timer : MonoBehaviour
     }
     void Update()
     {
-        timePassedInSeconds += Time.deltaTime;
-        timerText.text = $"Timer: {(int)timePassedInSeconds}";
+        if (isTimerRunning)
+        {
+            timePassedInSeconds += Time.deltaTime;
+            timerText.text = $"Timer: {(int)timePassedInSeconds}";
+        }
+    }
+    public void StopTimer()
+    {
+        isTimerRunning = false;
     }
 }
