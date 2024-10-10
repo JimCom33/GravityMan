@@ -4,16 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+// Used CHATGPT
+
 public class DisplayBestScore : MonoBehaviour
 {
-    public TMP_Text bestTimeText;  // Reference to the Text UI element
+    public TMP_Text bestTimeText;
 
     void Start()
     {
-        // Get the best time from PlayerPrefs
-        float bestTime = PlayerPrefs.GetFloat("BestTime", 999f);  // Default to a large number if no best time is set
+       
+        float bestTime = PlayerPrefs.GetFloat("BestTime", 999f);
 
-        // If no best time has been set, display a message like "No Best Time Yet"
+        
         if (bestTime == 999f)
         {
             bestTimeText.text = "Best Time: Not Set";

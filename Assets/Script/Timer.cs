@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
     {
         isTimerRunning = false;
 
-        // Save the time if it's the best
+        
         TimeManager timeManager = FindObjectOfType<TimeManager>();
         timeManager.currentTime = timePassedInSeconds;
         timeManager.SaveBestTime();

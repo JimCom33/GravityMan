@@ -19,4 +19,10 @@ public class TimeManager : MonoBehaviour
             Debug.Log("New best time saved: " + currentTime);
         }
     }
+
+    public void ResetBestTime()
+    {
+        PlayerPrefs.DeleteKey("BestTime");
+        PlayerPrefs.Save();
+    }
 }
