@@ -6,8 +6,11 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     TMP_Text timerText;
+    
     static float timePassedInSeconds;
     private bool isTimerRunning = true;
+    
+    
 
     private void Start()
     {
@@ -20,9 +23,21 @@ public class Timer : MonoBehaviour
             timePassedInSeconds += Time.deltaTime;
             timerText.text = $"Timer: {(int)timePassedInSeconds}";
         }
+
     }
     public void StopTimer()
     {
         isTimerRunning = false;
+    }
+    public void OnGameComplete()
+    {
+        isTimerRunning = false;
+
+        // Save the time if it's the best
+        TimeManager timeManager = FindObjectOfType<TimeManager>();
+        timeManager.currentTime = timePassedInSeconds;
+        timeManager.SaveBestTime();
+
+        Debug.Log("Game Complete! Final Time: " + timePassedInSeconds);
     }
 }

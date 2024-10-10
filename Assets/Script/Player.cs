@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
         {
             if (string.IsNullOrEmpty(nextLevelName)) 
             {
-                FindAnyObjectByType<Timer>().StopTimer();
+                FindAnyObjectByType<Timer>().OnGameComplete();
                 vic.color = Color.green;
             }
             else
