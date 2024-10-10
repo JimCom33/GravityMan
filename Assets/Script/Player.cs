@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         {
             if (string.IsNullOrEmpty(nextLevelName)) 
             {
-                FindAnyObjectByType<TMP_Text>().color = Color.white;
+                FindAnyObjectByType<TMP_Text>().color = Color.green;
             }
             else
             {
